@@ -37,5 +37,29 @@ sayHello("Xedo");
 function logKey(event){
     console.log(`you pressed "${event.key}".`);
 }
-textBox.addEventListener("keydown", logKey);
+document.addEventListener("keydown", logKey);
 
+// You can use anonymous function inside the event listener
+document.addEventListener("keydown", function(event){
+    console.log(`you pressed "${event.key}"`);
+});
+
+// Arrow functions. Even shorter eversion
+document.addEventListener("keydown", (event) => {
+    console.log(`you pressed "${event.key}"`);
+});
+// If only one parameter, omit the parentheses
+document.addEventListener("keydown", event => {
+    console.log(`you pressed "${event.key}"`);
+});
+
+// If the function contains only one line that's a return statement, omit braces and the return keyword.
+const originals = [1, 2, 3];
+
+const doubled = originals.map(item => item * 2);
+console.log(doubled); //[2, 3, 6];
+
+// So the item => item * 2 is equivalent as
+function doubleItem (item) {
+    return item * 2;
+}
