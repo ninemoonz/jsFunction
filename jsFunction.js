@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const textBox = document.querySelector("#textBox");
+    const output = document.querySelector("#output");
+
+    textBox.addEventListener("keydown", (event) => {
+      output.textContent = `You pressed "${event.key}".`;
+    });
+  });
+
 // how to write function and invoke function
 //How to write
 function myFunction() {
@@ -34,6 +43,7 @@ sayHello("Xedo");
 
 
 // Anonymous function example
+/*
 function logKey(event){
     console.log(`you pressed "${event.key}".`);
 }
@@ -48,10 +58,13 @@ document.addEventListener("keydown", function(event){
 document.addEventListener("keydown", (event) => {
     console.log(`you pressed "${event.key}"`);
 });
+
+
 // If only one parameter, omit the parentheses
 document.addEventListener("keydown", event => {
     console.log(`you pressed "${event.key}"`);
 });
+*/
 
 // If the function contains only one line that's a return statement, omit braces and the return keyword.
 const originals = [1, 2, 3];
@@ -62,4 +75,7 @@ console.log(doubled); //[2, 3, 6];
 // So the item => item * 2 is equivalent as
 function doubleItem (item) {
     return item * 2;
-}
+};
+
+
+
